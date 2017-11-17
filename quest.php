@@ -12,8 +12,9 @@ require_once('classes/Question.php');
 $obj = new Question();
 
 $questions = $obj->getQuestions($db, (int)$_GET['id']);
+
 echo "<pre>";
-//var_dump($questions);
-//die;
+var_dump($questions);
+die;
 
 include('views/test.php');
