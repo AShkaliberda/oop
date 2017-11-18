@@ -11,13 +11,13 @@
     <title>Система тестування</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
 
 </head>
 <body>
-<?php include '../views/'.$content_view; ?>
+<?php include ($content_view); ?>
 </body>
 </html>
