@@ -14,7 +14,7 @@ class Route
         $controller_name = 'Main';
         $action_name = 'index';
 
-        $routes = explode('/', $_SERVER['REQUEST_URI']);
+        $routes = explode('/', $_SERVER['REQUEST_URI']); //парсим строку
 
         // получаем имя контроллера
         if ( !empty($routes[1]) )
@@ -36,18 +36,19 @@ class Route
         // подцепляем файл с классом модели (файла модели может и не быть)
 
         $model_file = strtolower($model_name).'.php';
-        $model_path = "..//models/".$model_file;
+        $model_path = $model_file;
         if(file_exists($model_path))
         {
-            include "../models/".$model_file;
+            include "$model_file";
         }
 
         // подцепляем файл с классом контроллера
         $controller_file = strtolower($controller_name).'.php';
-        $controller_path = "../controllers/".$controller_file;
+        $controller_path = "controllers/".$controller_file;
+
         if(file_exists($controller_path))
         {
-            include "../controllers/".$controller_file;
+            include "controllers/" .$controller_file;
         }
         else
         {

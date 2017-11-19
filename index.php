@@ -5,19 +5,14 @@
  * Date: 03.11.2017
  * Time: 17:13
  */
+ini_set('display_errors', 1);
 session_start();
-require_once('config.php');
 
-spl_autoload_register(function($model){
-    if(file_exists("classes/".$model.".php")){
-        include_once "classes/".$model.".php";
+spl_autoload_register(function($class){
+    if(file_exists("classes/".$class.".php")){
+        include_once "classes/" .$class. ".php";
     }
 });
 
+Route::start();
 
-//$obj = new Test();
-//$tests = $obj->getAllTests($db);
-//
-//require_once('views/header.php');
-//require_once('views/main.php');
-//require_once('views/footer.php');
